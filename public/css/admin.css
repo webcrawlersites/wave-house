@@ -1,0 +1,123 @@
+/* Login / Register Forms */
+
+.logreg-form-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.logreg-logo {
+    flex-basis: 100%;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.logreg-form {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.logreg-form input,
+.logreg-form button {
+    flex-basis: 100%;
+    margin-bottom: 3rem;
+}
+
+.logreg-form input {
+    padding: 1rem;
+    border: 1px solid black;
+    border-radius: 50px;
+}
+
+.logreg-form label {
+    padding: 1rem;
+}
+
+.logreg-form button {
+    background-color: var(--green);
+    border: 0;
+    outline: 0;
+    padding: 1rem 2rem;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 100px;
+    cursor: pointer;
+}
+
+/* Dashboard Styles */
+
+
+#admin-header {
+    background-color: #171717;
+    max-width: 100%;
+    padding: 2rem 4%;
+}
+
+#admin-header nav ul {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+#admin-header nav ul li {
+    padding-right: 3rem;
+}
+
+#admin-header nav ul li a {
+    text-decoration: none;
+    color: var(--white);
+}
+
+#admin-header nav ul li a:hover {
+    text-decoration: none;
+    color: var(--white);
+}
+
+.page-content {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding-top: 2rem;
+}
+
+/* Dashboard */
+
+.admin-header {
+    font-size: 35px;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+/* Add New Property */
+
+#add_property_form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2rem;
+}
+
+#add_property_form div {
+    display: flex;
+    flex-direction: column;
+}
+
+#add_property_form div label {
+    padding-bottom: 1rem;
+}
+
+#add_property_form div input,
+#add_property_form div select {
+    padding: 0.5rem;
+}
+
+#add_property_form button {
+    background-color: var(--green);
+    border: 0;
+    outline: 0;
+    border-radius: 100px;
+    font-weight: bold;
+    font-size: 18px;
+}

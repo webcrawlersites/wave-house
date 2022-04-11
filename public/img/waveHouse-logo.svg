@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="254" height="123" viewBox="0 0 254 123">
+  <g id="Group_2" data-name="Group 2" transform="translate(-834 -70)">
+    <g id="Group_1" data-name="Group 1" transform="translate(906.567 69.999)">
+      <path id="Path_1" data-name="Path 1" d="M1090.427,854.268,1075.286,867.2a7.29,7.29,0,0,0-2.553,5.482l-.318,39.371h-28.242a7.287,7.287,0,0,1-7.285-7.345l.259-32.026a7.29,7.29,0,0,1,2.553-5.482l15.2-12.99,13-11.105a7.286,7.286,0,0,1,9.466,0l13,11.105Z" transform="translate(-1036.84 -841.36)" fill="#012741"/>
+      <path id="Path_2" data-name="Path 2" d="M1553.912,872.755l-.259,32.073a7.286,7.286,0,0,1-7.286,7.228H1518l.318-39.3a7.29,7.29,0,0,0-2.553-5.6l-15.087-12.89.063-.055,13-11.105a7.287,7.287,0,0,1,9.466,0l13,11.105,15.152,12.945A7.289,7.289,0,0,1,1553.912,872.755Z" transform="translate(-1447.093 -841.36)" fill="#38f99c"/>
+    </g>
+    <text id="WaveHouse" transform="translate(834 184)" font-size="37" font-family="Quicksand-SemiBold, Quicksand" font-weight="600" letter-spacing="0.15em"><tspan x="0" y="0">WaveHouse</tspan></text>
+  </g>
+</svg>
