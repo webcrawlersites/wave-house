@@ -4,3 +4,7 @@
 <h1 class="admin-header">Dashboard</h1>
 <p>Welcome to your dashboard where you can edit current listings, add new listings, and delete listing.</p>
 @endsection
+
+@if (session()->has('success'))
+    <p class="success-message">{{ session('success') }}</p>
+@endif

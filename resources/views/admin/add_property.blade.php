@@ -9,12 +9,12 @@
     @csrf
     <div>
         <label for="prop_title">Property Title</label>
-        <input type="text" name="prop_title" id="prop_title" />
+        <input type="text" name="prop_title" id="prop_title" required />
     </div>
 
     <div>
         <label for="prop_desciption">Property Description</label>
-        <textarea name="prop_desc" id="prop_desc"></textarea>
+        <textarea name="prop_desc" id="prop_desc" required></textarea>
     </div>
 
     <div>
@@ -24,22 +24,22 @@
 
     <div>
         <label for="prop_beds">Number of Bedrooms</label>
-        <input type="number" name="prop_beds" id="prop_beds" steps="1" min="1" />
+        <input type="number" name="prop_beds" id="prop_beds" steps="1" min="1" required />
     </div>
 
     <div>
         <label for="prop_baths">Number of Bathrooms</label>
-        <input type="number" name="prop_baths" id="prop_baths" />
+        <input type="number" name="prop_baths" id="prop_baths" required />
     </div>
 
     <div>
         <label for="prop_ft">Sqaure Feet</label>
-        <input type="number" name="prop_ft" id="prop_ft" />
+        <input type="number" name="prop_ft" id="prop_ft" required />
     </div>
 
     <div>
         <label for="props_basement">Finished Basement?</label>
-        <select name="prop_basement" id="prop_basement">
+        <select name="prop_basement" id="prop_basement" required>
             <option value="" selected disabled>Select an option</option>
             <option value="yes">Yes</option>
             <option value="no">No</option>
@@ -48,12 +48,12 @@
 
     <div>
         <label for="prop_tax">Property Tax</label>
-        <input type="number" name="prop_tax" id="prop_tax" />
+        <input type="number" name="prop_tax" id="prop_tax" required />
     </div>
 
     <div>
         <label for="props_heat">Heat Type</label>
-        <select name="prop_heat" id="prop_heat">
+        <select name="prop_heat" id="prop_heat" required>
             <option value="" selected disabled>Select an option</option>
             <option value="gas">Gas</option>
             <option value="oil">Oil</option>
@@ -63,7 +63,7 @@
 
     <div>
         <label for="props_waterheater">Finished Basement?</label>
-        <select name="prop_waterheater" id="prop_waterheater">
+        <select name="prop_waterheater" id="prop_waterheater" required>
             <option value="" selected disabled>Select an option</option>
             <option value="yes">Yes</option>
             <option value="no">No</option>
@@ -72,7 +72,7 @@
 
     <div>
         <label for="prop_year">Year Built</label>
-        <input type="number" name="prop_year" id="prop_year" />
+        <input type="number" name="prop_year" id="prop_year" required />
     </div>
 
     <button type="submit">Add New Listing</button>

@@ -90,6 +90,56 @@
     font-weight: 600;
     margin-bottom: 2rem;
 }
+.success-message {
+    background-color: var(--green);
+    color: black;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+/* Properties Page */
+
+.admin-properties-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 2rem;
+}
+
+.admin-properties-list .property-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--blue);
+    border-radius: 10px;
+}
+
+.admin-properties-list .property-card h3 {
+    color: var(--white);
+    font-weight: 600;
+}
+
+.property-actions {
+    visibility: hidden;
+}
+
+.admin-properties-list .property-card:hover .property-actions {
+    visibility: visible;
+}
+
+.property-actions ul li {
+    display: inline-block;
+    padding-left: 2rem;
+}
+
+.property-actions ul li a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--green);
+    color: var(--black);
+    border-radius: 15px;
+}
 
 /* Add New Property */
 

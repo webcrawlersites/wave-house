@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Property;
+use Illuminate\Support\Facades\Storage;
 
 class PropertiesController extends Controller
 {
@@ -40,9 +41,8 @@ class PropertiesController extends Controller
     public function store(Request $request)
     {
 
-        // Create a new Property and store it in the properties DB
+        // Create a new Property instance and store it in the properties DB
         $prop = new Property;
-        $path;
 
         if ($request->hasFile('prop_img')) {
             // Get the file data fromt he form
@@ -68,6 +68,11 @@ class PropertiesController extends Controller
             $prop->property_image = $filename;
          }
 
+        // Syntax:
+        // $prop is a new Property instance
+        // property_title is the table name in the Properties table
+        // $request object pulls the forma data
+        //input() take a parameter of the name attribute of the HTML input or select field from the form submittes
         $prop->property_title = $request->input('prop_title');
         $prop->property_description = $request->input('prop_desc');
         $prop->bedrooms = $request->input('prop_beds');
@@ -78,6 +83,8 @@ class PropertiesController extends Controller
         $prop->heat_type = $request->input('prop_heat');
         $prop->water_heater = $request->input('prop_waterheater');
         $prop->year_built = $request->input('prop_year');
+
+        // After uploading all the data, save it to the table in the database
         $prop->save();
         return view('admin.add_property');
     }
@@ -125,6 +132,16 @@ class PropertiesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // Find the specific property id
+        $property = Property::find($id);
+
+        // Delete record from table
+        $property->delete();
+
+        // Delete the file stored for this property
+        $imageFile = $property->property_image;
+        Storage::delete($imageFile);
+
+        return redirect('admin/properties');
     }
 }

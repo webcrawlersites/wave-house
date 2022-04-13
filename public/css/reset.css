@@ -60,7 +60,7 @@ h2 {
     font-weight: 600;
 }
 
-p, a, li, span, label, input, button {
+p, a, li, span, label, input, button, h3 {
     font-family: 'Lato', sans-serif;
 }
 

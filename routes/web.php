@@ -26,12 +26,12 @@ Route::group(['prefix' => 'admin'], function() {
 
     Route::get('/', function() {
         return view('admin.dashboard');
-    })->middleware('auth');
+    })->name('admin')->middleware('auth');
 
-    Route::get('/properties', [PropertiesController::class, 'index'])->middleware('auth');
+    Route::get('/properties', [PropertiesController::class, 'index'])->name('all-properties')->middleware('auth');
     Route::get('/properties/create', [PropertiesController::class, 'create'])->middleware('auth');
-    Route::post('/properties/store-post', [PropertiesController::class, 'store'])->name('admin.store_properties')->middleware('auth');
-
+    Route::post('/properties/store-property', [PropertiesController::class, 'store'])->name('admin.store_properties')->middleware('auth');
+    Route::get('/properties/delete/{id}', [PropertiesController::class, 'destroy'])->middleware('auth');
 
 });
 
