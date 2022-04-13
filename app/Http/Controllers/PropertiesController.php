@@ -30,6 +30,7 @@ class PropertiesController extends Controller
         return view('admin.add_property');
     }
 
+
     /**
      * Store a newly created resource in storage.
      *
@@ -38,27 +39,29 @@ class PropertiesController extends Controller
      */
     public function store(Request $request)
     {
+
         // Create a new Property and store it in the properties DB
         $prop = new Property;
         $path;
+
         if ($request->hasFile('prop_img')) {
-           
-           // Get filename with extension
-            $filenameWithExt = $request->file('prop_img')->getClientOriginalName();
-           // Get just filename
-           $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
-           // Get just extension
-           $extension = $request->file('prop_img')->getClientOriginalExtension();
+           // Get file
+            $file = $request->file('prop_img');
 
-           // Filename to store
-           $filenameToStore = $filename . '_' . time() . '.' . $extension;
-
-           // Upload Image
-           $path = $request->file('prop_img')->storeAs('public/property_images', $filenameToStore);
-        } else {
+            // Get filename with extension
+             $filenameWithExt = $request->file('prop_img')->getClientOriginalName();
+            // Get just filename
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            // Get just extension
+            $extension = $request->file('prop_img')->getClientOriginalExtension();
+ 
             // Filename to store
-           $filenameToStore = 'noimage.jpg';
-        }
+            $filenameToStore = $filename . '_' . time() . '.' . $extension;
+ 
+            // Upload Image
+            $path = $request->file('prop_img')->storeAs('public/property_images', $filenameToStore);
+            $moveImage = $file->move('public/property_images', $filenameToStore);
+         }
 
         $prop->property_title = $request->input('prop_title');
         $prop->property_description = $request->input('prop_desc');
@@ -68,7 +71,8 @@ class PropertiesController extends Controller
         $prop->square_feet = $request->input('prop_ft');
         $prop->finished_basement = $request->input('prop_basement');
         $prop->prop_tax = $request->input('prop_tax');
-        $prop->heat_type = $request->prop_heat;
+        $prop->heat_type = $request->input('prop_heat');
+        $prop->water_heater = $request->input('prop_waterheater');
         $prop->year_built = $request->input('prop_year');
         $prop->save();
         return view('admin.add_property');

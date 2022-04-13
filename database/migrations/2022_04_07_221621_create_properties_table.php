@@ -21,7 +21,7 @@ return new class extends Migration
                 $table->string('property_image');
                 $table->unsignedInteger('bedrooms');
                 $table->unsignedDecimal('bathrooms');
-                $table->unsignedInteger('sqaure_feet');
+                $table->unsignedInteger('square_feet');
                 $table->string('finished_basement', 10);
                 $table->unsignedDecimal('prop_tax');
                 $table->string('heat_type', 10);
