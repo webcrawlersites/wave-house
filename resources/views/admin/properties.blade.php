@@ -7,7 +7,7 @@
     @foreach($properties as $p)
     <div class="property-card">
         <h3>{{$p->property_title}}</h3>
-        <img src="{{$p->property_image}}" alt="Property Image">
+        <img src="/property_images/{{$p->property_image}}" alt="Property Image">
     </div>
     @endforeach
 @endif

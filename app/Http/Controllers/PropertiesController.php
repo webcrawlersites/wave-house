@@ -45,27 +45,31 @@ class PropertiesController extends Controller
         $path;
 
         if ($request->hasFile('prop_img')) {
-           // Get file
+            // Get the file data fromt he form
             $file = $request->file('prop_img');
 
-            // Get filename with extension
-             $filenameWithExt = $request->file('prop_img')->getClientOriginalName();
-            // Get just filename
-            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
-            // Get just extension
-            $extension = $request->file('prop_img')->getClientOriginalExtension();
- 
-            // Filename to store
-            $filenameToStore = $filename . '_' . time() . '.' . $extension;
- 
-            // Upload Image
-            $path = $request->file('prop_img')->storeAs('public/property_images', $filenameToStore);
-            $moveImage = $file->move('public/property_images', $filenameToStore);
+            // Get the filename of the uploaded file with Extension
+            $filenameWithExtension = $file->getClientOriginalName();
+
+            // Get the filename of the uploaded file extension
+            $Extension = $file->getClientOriginalExtension();
+
+            // Get the file name without extension. Then, we will add a time() to the end of the name
+            $filenameOnly = pathinfo($filenameWithExtension, PATHINFO_FILENAME);
+
+            // Now we will create a name for the file so there isn't a duplicate error in storage
+            $filename = $filenameOnly . time() . '.' . $Extension;
+
+            // Store the uploaded file (NOT the filename) into a folder in the public directory
+            // It already knows to create it in public. So just put the name of the folder you will like to create
+            $file->move('property_images', $filename); // move takes two parameters - The path to move the file and the name of the file
+
+            // Store the file name into the database
+            $prop->property_image = $filename;
          }
 
         $prop->property_title = $request->input('prop_title');
         $prop->property_description = $request->input('prop_desc');
-        $prop->property_image = $path;
         $prop->bedrooms = $request->input('prop_beds');
         $prop->bathrooms = $request->input('prop_baths');
         $prop->square_feet = $request->input('prop_ft');
